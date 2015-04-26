@@ -5,7 +5,7 @@ app.controller('FriendController', function($scope){
 	$scope.test = 'testing stuff here';
 
 	$scope.searchTerm;
-	$scopr.attribute;
+	$scope.attribute;
 	$scope.sort = 'true';
 
 	$scope.friends = [

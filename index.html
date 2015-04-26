@@ -31,10 +31,12 @@
         <option>State</option>
         <option>Country</option>
     </select>
+    {{attribute}}
     <select class="input-medium" ng-model='sort'>
         <option value="false">Descending</option>
         <option value="true">Ascending</option>
     </select>
+    {{sort}}
   </div>
 </form>
 
@@ -52,9 +54,9 @@
         Friends: 1,367
       </div>
     </li>
-    <li ng-repeat='person in friends | filter:searchTerm'>
-      {{person.name}}
-      <img src='{{person.pic_square}}' />
+    <li class='friend' ng-repeat='person in friends | filter:searchTerm | orderBy:"friends.name"'>
+      <img class='profile-pic' src='{{person.pic_square}}' />
+            {{person.name}}
     </li>
   </ul>
 </div>
