@@ -8,6 +8,14 @@ app.controller('FriendController', function($scope){
 	$scope.sortAttribute;
 	$scope.sort = 'true';
 
+
+    $scope.options = [
+        {label: 'Name',
+        value: 'name'},
+        {label: 'City',
+        value: 'current_location.city'}
+    ]
+
 	$scope.friends = [
     {
         "name": "Preston McNeil",
