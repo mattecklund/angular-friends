@@ -25,11 +25,11 @@
     <input class="form-control" placeholder="Search Your Freinds' Location" > 
  -->
     <select class="input-medium" ng-model='attribute'>
-        <option>Name</option>
-        <option># friends</option>
-        <option>City</option>
-        <option>State</option>
-        <option>Country</option>
+        <option value="name">Name</option>
+        <option value="friend_count"># friends</option>
+        <option value="current.location.city">City</option>
+        <option value="current_location.state">State</option>
+        <option value="current_location.country">Country</option>
     </select>
     {{attribute}}
     <select class="input-medium" ng-model='sort'>
@@ -54,9 +54,10 @@
         Friends: 1,367
       </div>
     </li>
-    <li class='friend' ng-repeat='person in friends | filter:searchTerm | orderBy:"friends.name"'>
+    <li class='friend' ng-repeat='person in friends | filter:searchTerm | orderBy:attribute:sort'>
       <img class='profile-pic' src='{{person.pic_square}}' />
             {{person.name}}
+            <div class="locations">{{person.current_location.city}} {{person.current_location.state}}, {{person.current_location.country}}</div>
     </li>
   </ul>
 </div>
